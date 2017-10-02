@@ -31,7 +31,8 @@
     "sass-loader": "^6.0.3",
     "seamless-immutable": "^7.1.2",
     "sequelize": "^3.30.4",
-    "style-loader": "^0.16.1"
+    "style-loader": "^0.16.1",
+    "uglifyjs-webpack-plugin": "^0.4.6"
   },
   "devDependencies": {
     "babel": "^6.5.2",

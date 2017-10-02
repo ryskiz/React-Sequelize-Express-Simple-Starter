@@ -1,5 +1,6 @@
-var path = require('path');
-var LiveReloadPlugin = require('webpack-livereload-plugin');
+const path = require('path');
+const LiveReloadPlugin = require('webpack-livereload-plugin');
+const UglifyPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './client/index.js'],
@@ -31,5 +32,12 @@ module.exports = {
   },
   plugins: [
     new LiveReloadPlugin({appendScriptTag: true})
+    // for production
+    // new UglifyPlugin({
+    //   parallel: {
+    //     cache: true,
+    //     workers: 2
+    //   }
+    // })
   ]
 };
