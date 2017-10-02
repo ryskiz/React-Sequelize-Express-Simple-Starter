@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux'
+import UserActions from '../redux/UserRedux'
 
-export default class Home extends Component {
-
+class Home extends Component {
+  componentDidMount(){
+    console.log(this.props.user)
+    this.props.getUsers()
+  }
   render() {
     return (
       <div>
@@ -10,3 +15,13 @@ export default class Home extends Component {
     )
   }
 }
+
+const mapState = ({user}) => ({
+  user
+})
+
+const mapDispatch = (dispatch) => ({
+  getUsers: () => dispatch(UserActions.getUsers())
+})
+
+export default connect(mapState, mapDispatch)(Home)
