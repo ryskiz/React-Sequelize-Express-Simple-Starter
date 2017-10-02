@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import UserActions from '../redux/UserRedux'
 
 class Home extends Component {
-  componentDidMount(){
+  componentDidMount() {
     console.log(this.props.user)
-    this.props.getUsers()
+    // this.props.getUsers()
   }
+
   render() {
     return (
-      <div>
-        <h1>Let's get crackin'!</h1>
+      <div className="row">
+        <div className="col-md-12 text-center">
+          <h1>Let's get crackin'!</h1>
+        </div>
       </div>
     )
   }
